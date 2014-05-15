@@ -16,7 +16,14 @@ The IA is clearly not optimal, as it does not try and compare possible moves for
 When no move is possible, the game is lost; hidden cards are revealed.
 
 
-Build
------
+Build & Run
+-----------
 
 Built and tested on Mac OSX, with clang. Other platforms may or may not work.
+```
+cd solitaire
+make
+build/solitaire
+```
+
+Note: your terminal must support UTF-8, and ANSI color codes; otherwise the output will look garbled.
