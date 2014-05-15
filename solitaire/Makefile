@@ -4,27 +4,26 @@
 CC = clang++
 
 # define any compile-time flags
-CFLAGS = -Wall -std=c++11 -stdlib=libc++
+CFLAGS = -I./src -Wall -std=c++11 -stdlib=libc++
 
 # define the C source files
-SRCS := $(wildcard *.cpp)
-OBJS := $(SRCS:.cpp=.o)
+SRCS := main.cpp $(wildcard src/*.cpp)
+OBJS := $(SRCS:src=build:.cpp=.o)
 MAIN = solitaire
-
 
 
 .PHONY: clean
 
-all: $(MAIN)
+all: Makefile.deps $(MAIN)
 
 $(MAIN): $(OBJS)
-	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
+	$(CC) $(CFLAGS) -o build/$(MAIN) $(OBJS)
 
 %.o: %.cpp *.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o build/$@
 
 clean:
-	$(RM) *.o *~ $(MAIN)
+	$(RM) build/*
 
 Makefile.deps: $(SRCS)
-	$(CC) -MM $^ > Makefile.deps
+	$(CC) $(CFLAGS) -MM $^ > Makefile.deps
