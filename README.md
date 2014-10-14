@@ -19,11 +19,12 @@ When no move is possible, the game is lost; hidden cards are revealed.
 Build & Run
 -----------
 
-Built and tested on Mac OSX, with clang. Other platforms may or may not work.
+Built and tested on Linux and Mac OSX (with clang). Other platforms may or may not work.
 ```
-cd solitaire
+cd build/ 
+cmake
 make
-build/solitaire
+./klondike
 ```
 
 Note: your terminal must support UTF-8, and ANSI color codes; otherwise the output will look garbled.

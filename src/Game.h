@@ -3,7 +3,7 @@
 #define __Game_H_
 
 #include <vector>
-#import <set>
+#include <set>
 #include "Deck.h"
 #include "Stack.h"
 #include "Foundation.h"

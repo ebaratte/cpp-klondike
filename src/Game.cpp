@@ -1,4 +1,5 @@
 #include <sstream>
+#include <algorithm>
 #include "Game.h"
 
 // Attempt for a portable msleep(int ms)
